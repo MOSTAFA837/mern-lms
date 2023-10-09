@@ -13,7 +13,7 @@ export interface IUser extends Document {
   };
   role: string;
   isVerified: boolean;
-  courser: Array<{ courseId: string }>;
+  courses: Array<{ courseId: string }>;
   comparePassword: (password: string) => Promise<boolean>;
 }
 
@@ -52,7 +52,7 @@ const userSchema: Schema<IUser> = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    courser: [
+    courses: [
       {
         courseId: String,
       },
